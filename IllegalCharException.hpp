@@ -4,7 +4,9 @@
 
 #ifndef TIC_TAC_TOE_ILLEGALCHAREXCEPTION_HPP
 #define TIC_TAC_TOE_ILLEGALCHAREXCEPTION_HPP
-class IllegalCharException{
+
+#include <exception>
+class IllegalCharException:public std::exception{
 private:
     char c;
 public:
