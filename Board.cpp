@@ -7,7 +7,7 @@
 // verify symbols in game
 void verify(char c){
     if (c !='.'&& c!='X' &&c != 'O'){
-        throw IllegalCharException{c};
+        throw (IllegalCharException{c});
     }
 }
 
