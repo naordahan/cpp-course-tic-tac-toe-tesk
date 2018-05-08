@@ -13,15 +13,12 @@ private:
     // no idea yet
 public:
     // no idea yet
-    int x,y;
-    IllegalCoordinateException(int xp,int yp): x(xp),y(xp){}
-    std::string theCoordinate() const{
-        return std::to_string(x)+ ","+std::to_string(y);
+    Coordinata c;
+    IllegalCoordinateException(Coordinata c): c(c){}
+    Coordinata theCoordinate() const{
+        return c;
     }
-    IllegalCoordinateException(Coordinata c){
-        this->x=c.x;
-        this->y=c.y;
-    }
+
 };
 
 #endif //TIC_TAC_TOE_ILLEGALCOORDINATEEXCEPTION_HPP
