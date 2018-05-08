@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Board.hpp"
+#include "Board.h"
 //#include "IllegalCharExeption.hpp"
 //#include <iostream>
 //using namespace std;

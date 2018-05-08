@@ -2,7 +2,7 @@
 // Created by shosh on 5/1/18.
 //
 
-#include "Board.hpp"
+#include "Board.h"
 
 // verify symbols in game
 void verify(char c){
