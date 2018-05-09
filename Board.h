@@ -32,6 +32,24 @@ public:
 
         operator=('.');
     }
+    //TODO: fix deep copy
+    Board(Board& b2){
+        size = b2.size;
+        boardmatrix = new char[size*size];
+        //naive fix
+        for(int i=0;i<size*size;++i){
+            boardmatrix[i]=b2.boardmatrix[i];
+        }
+
+    }
+    Board & operator =(Board &b2){
+        this->size=b2.size;
+        //naive fix
+        for(int i=0;i<size*size;++i){
+            this->boardmatrix[i]=b2.boardmatrix[i];
+        }
+        return *this;
+    }
     unsigned int indx(int x,int y) const{
         return x*size+y;
     }
