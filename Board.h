@@ -36,6 +36,7 @@ public:
     }
     //TODO: fix deep copy
     Board(Board& b2){
+
         size = b2.size;
         boardmatrix = new char[size*size];
         //naive fix
@@ -45,6 +46,7 @@ public:
 
     }
     Board & operator =(Board &b2){
+        delete[] this->boardmatrix;
         this->size=b2.size;
         //naive fix
         for(int i=0;i<size*size;++i){
@@ -82,6 +84,7 @@ public:
 
     //dtor
     ~Board(){
+
         delete[] boardmatrix;
         //cout << "mat deleted";
     }
