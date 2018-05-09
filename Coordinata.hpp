@@ -11,16 +11,14 @@ struct Coordinata {
     int  x,y;
     Coordinata(int xindx,int yindex):x(xindx),y(yindex){};
 
-    ~Coordinata() {
-
-    };
+//    ~Coordinata() {};
 
 //    Coordinata(const Coordinata &c2){
 //        setX(c2.x);
 //        setY(c2.y);
 //    };
     Coordinata operator=(const Coordinata &c2){
-        this-> ~Coordinata();
+//        this-> ~Coordinata();
         setX(c2.x);
         setY(c2.y);
         return *this;
