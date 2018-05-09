@@ -34,3 +34,7 @@ Board& Board::operator=(char c){
     }
     return *this;
 }
+Boardloc & Boardloc::operator=(Boardloc c){
+    this->location=c.location;
+    return *this;
+}

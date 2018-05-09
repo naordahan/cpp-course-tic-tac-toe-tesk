@@ -18,7 +18,9 @@ public:
     char & location;
     Boardloc(char& loc): location(loc){}
     Boardloc & operator=(char c);
+    Boardloc & operator=(Boardloc c);
     operator  char() const{return location;};
+    ~Boardloc(){};
 
 };
 class Board {
