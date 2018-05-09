@@ -6,7 +6,8 @@ CXFLAG = -std=c+17
 Board.o: Board.cpp Board.h
 	$(CXX) $(CPPFLAGS) --compile Board.cpp -o Board.o
 
-main.o: main.cpp Board.h
+
+main.o: Board.o main.cpp
 	$(CXX) $(CPPFLAGS) -c main.cpp -o main.o
 #to remove generated files
 
