@@ -30,7 +30,7 @@ Boardloc& Boardloc::operator=(char c){
 Board& Board::operator=(char c){
     verify(c);
     for(int i=0;i<size*size;i++){
-        boardmatrix[i]= '.';
+        boardmatrix[i] = c;
     }
     return *this;
 }
