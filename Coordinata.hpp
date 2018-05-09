@@ -15,10 +15,10 @@ struct Coordinata {
 
     };
 
-    Coordinata(const Coordinata &c2){
-        setX(c2.x);
-        setY(c2.y);
-    };
+//    Coordinata(const Coordinata &c2){
+//        setX(c2.x);
+//        setY(c2.y);
+//    };
     Coordinata operator=(const Coordinata &c2){
         this-> ~Coordinata();
         setX(c2.x);
