@@ -11,7 +11,7 @@ struct Coordinata {
     int  x,y;
     Coordinata(int xindx,int yindex):x(xindx),y(yindex){};
 
-    virtual ~Coordinata() {
+    ~Coordinata() {
 
     };
 
