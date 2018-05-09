@@ -7,7 +7,8 @@
 
 #include "Coordinata.hpp"
 #include <string>
-class IllegalCoordinateException{
+#include <exception>
+class IllegalCoordinateException:public std::exception{
     //TODO: build class
 private:
     // no idea yet

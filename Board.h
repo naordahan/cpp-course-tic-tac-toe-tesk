@@ -47,14 +47,14 @@ public:
 
     char operator [] (Coordinata c) const{
         if(c.x>=size ||c.x<0||c.y>=size||c.y<0){
-            throw IllegalCoordinateException{c};
+            throw IllegalCoordinateException(c);
         }
         return Boardloc(boardmatrix[indx(c.x,c.y)]);
     }
 
     Boardloc operator [](Coordinata c){
         if(c.x>=size ||c.x<0||c.y>=size||c.y<0){
-            throw IllegalCoordinateException{c};
+            throw IllegalCoordinateException(c);
         }
         return boardmatrix[indx(c.x,c.y)];
     }
