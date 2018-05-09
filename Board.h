@@ -81,7 +81,7 @@ public:
     //dtor
     ~Board(){
         delete[] boardmatrix;
-        cout << "mat deleted";
+        //cout << "mat deleted";
     }
 };
 
