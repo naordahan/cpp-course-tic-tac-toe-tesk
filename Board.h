@@ -46,8 +46,8 @@ public:
 
     }
     Board & operator =(Board &b2){
-        delete[] this->boardmatrix;
-        this->size=b2.size;
+        this->~Board();
+        size=b2.size;
         //naive fix
         for(int i=0;i<size*size;++i){
             this->boardmatrix[i]=b2.boardmatrix[i];
