@@ -45,7 +45,7 @@ public:
         }
 
     }
-    Board & operator =(Board &b2){
+    Board  operator =(Board &b2){
         this->~Board();
         size=b2.size;
         //naive fix
