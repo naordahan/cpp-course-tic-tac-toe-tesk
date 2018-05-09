@@ -16,7 +16,7 @@ using namespace std;
 class Boardloc{
 public:
     char & location;
-    Boardloc(char& loc): location(loc){}
+    Boardloc(char& loc): location(loc){};
     Boardloc & operator=(char c);
     Boardloc & operator=(Boardloc c);
     operator  char() const{return location;};
@@ -49,6 +49,7 @@ public:
         this->~Board();
         size=b2.size;
         //naive fix
+        boardmatrix = new char[size*size];
         for(int i=0;i<size*size;++i){
             this->boardmatrix[i]=b2.boardmatrix[i];
         }
