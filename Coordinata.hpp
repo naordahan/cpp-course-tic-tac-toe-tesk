@@ -28,6 +28,7 @@ struct Coordinata {
         return (os<< a.x <<","<< a.y);
     }
 
+
 };
 
 
