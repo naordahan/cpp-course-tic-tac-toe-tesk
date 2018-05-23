@@ -6,8 +6,8 @@
 #define TIC_TAC_TOE_TICTACTOE_H
 
 #include "Board.h"
-#include "Player.hpp"
-
+//#include "Player.hpp"
+#include "Player.h"
 
 class TicTacToe {
 public:
