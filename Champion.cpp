@@ -21,7 +21,7 @@ const Coordinate Champion::play(const Board &board) {
     if(board[{board.size()-1,0}]=='.'){
         return{board.size()-1,0};
     }
-    int i,j;
+    uint i,j;
     i=board.size()-1;
     j=0;
     while(j<board.size()){
