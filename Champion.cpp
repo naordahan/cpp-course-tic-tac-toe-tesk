@@ -13,7 +13,7 @@
 //    }
 //    return {board.size()-1,board.size()-1};
 //}
-//but this one better
+//but this one better for test,win by controling secondary diagnal. tnx for omer for the idea. 
 const Coordinate Champion::play(const Board &board) {
     if(board[{board.size()-1,0}]=='.'){
         return{board.size()-1,0};
