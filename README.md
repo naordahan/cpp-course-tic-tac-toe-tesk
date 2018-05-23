@@ -2,6 +2,7 @@
 tic tac toe in c++ for cpp course
 
 old make file from tesk 6:
+/*
 #Declaration of variable
 CXX = clang++-5.0
 CXFLAG = -std=c+17
@@ -15,5 +16,5 @@ clean:
 #	$(CXX) $(CPPFLAGS) Board.o main.o
 #	./a.out
 #to abtain o files
-
+*/
 end of makefile
