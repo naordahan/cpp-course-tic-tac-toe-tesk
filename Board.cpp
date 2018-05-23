@@ -3,38 +3,79 @@
 //
 
 #include "Board.h"
-
-// verify symbols in game
-void verify(char c){
-    if (c !='.'&& c!='X' &&c != 'O'){
-        throw IllegalCharException(c);
+//ctor:
+Board::Board(const uint size){
+    this->bsize=size;
+    boardmatrix=new Coordinate*[size];
+    for(int i=0;i<size;++i){
+        boardmatrix[i]=new Coordinate[size];
+    }
+    //fill board with '.'
+    for (int i = 0; i <size ; ++i) {
+        for (int j = 0; j <size ; ++j) {
+            boardmatrix[i][j]='.';
+        }
     }
 }
-
-//ostream& Board::printmat(ostream &os)const{
-//    for (int i = 0; i < size; ++i) {
-//        for (int j = 0; j <size ; ++j) {
-//            os << boardmatrix[indx(i,j)];
-//        }
-//        os << endl;
-//    }
-//    return os;
-//}
-
-Boardloc& Boardloc::operator=(char c){
-    verify(c);
-    location=c;
-    return *this;
+//copy ctor
+Board::Board(const Board& b2){
+    this->bsize=b2.size();
+    this->boardmatrix =new Coordinate*[this->bsize];
+    for(int i=0;i<bsize;++i){
+        boardmatrix[i]=new Coordinate[bsize];
+    }
+    for (int i = 0; i <bsize ; ++i) {
+        for (int j = 0; j <bsize ; ++j) {
+            boardmatrix[i][j]=b2.boardmatrix[i][j];
+        }
+    }
+}
+// dtor
+Board::~Board(){
+    for (int i = 0; i <bsize ; ++i) {
+        delete[] boardmatrix[i];
+    }
+        delete [] boardmatrix;
 
 }
+
+
 Board& Board::operator=(char c){
-    verify(c);
-    for(int i=0;i<size*size;i++){
-        boardmatrix[i] = c;
+    if(c !='.'&&c !='O'&&c !='X')
+        throw IllegalCharException(c);
+    for (int i = 0; i < bsize; ++i) {
+        for (int j = 0; j <bsize ; ++j) {
+            boardmatrix[i][j]=c;
+        }
     }
     return *this;
 }
-Boardloc & Boardloc::operator=(Boardloc c){
-    this->location=c.location;
+Board& Board::operator =(const Board& b2){
+    this->~Board();
+    bsize=b2.size();
+    this->boardmatrix =new Coordinate*[this->bsize];
+    for(int i=0;i<bsize;++i){
+        boardmatrix[i]=new Coordinate[bsize];
+    }
+    for (int i = 0; i <bsize ; ++i) {
+        for (int j = 0; j <bsize ; ++j) {
+            boardmatrix[i][j].setSymbol(b2.boardmatrix[i][j].getsymbol()); //why not boardmatrix[i][j]=b2.boardmatrix[i][j];
+        }
+    }
     return *this;
+}
+
+Coordinate& Board::operator[](const Coordinate& c)const{
+    if(c.getX()>=bsize ||c.getY()>=bsize)
+        throw IllegalCoordinateException({c.getX(),c.getY()});
+    return boardmatrix[c.getX()][c.getY()];
+}
+  ostream&operator <<(ostream& os ,const Board& theboard){
+    for (int i = 0; i <theboard.bsize ; ++i) {
+        for (int j = 0; j <theboard.bsize ; ++j) {
+            os<<theboard.boardmatrix[i][j];
+        }
+        os<<endl;
+    }
+    return os;
 }

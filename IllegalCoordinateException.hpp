@@ -5,19 +5,22 @@
 #ifndef TIC_TAC_TOE_ILLEGALCOORDINATEEXCEPTION_HPP
 #define TIC_TAC_TOE_ILLEGALCOORDINATEEXCEPTION_HPP
 
-#include "Coordinata.hpp"
+#include "Coordinate.hpp"
 #include <string>
 #include <exception>
 class IllegalCoordinateException:public std::exception{
-    //TODO: build class
+
 private:
     // no idea yet
 public:
     // no idea yet
-    Coordinata c;
-    IllegalCoordinateException(Coordinata c): c(c){}
-    Coordinata theCoordinate() const{
-        return c;
+    Coordinate c;
+    IllegalCoordinateException(Coordinate c): c(c){}
+//    Coordinate theCoordinate() const{
+//        return c;
+//    }
+    const std::string theCoordinate() const{
+        return std::to_string(c.getX())+','+std::to_string(c.getY());
     }
 
 };
