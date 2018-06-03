@@ -256,7 +256,5 @@ string Board::draw(int nPx){
 
 
 ///
-/*
-shosh@shosh-vr:~/CLionProjects/tic-tac-toe$ g++ *.cpp -std=c++17
-shosh@shosh-vr:~/CLionProjects/tic-tac-toe$ ./a.out <test.txt
-*/
+//compile: g++ *.cpp -std=c++17
+//run: ./a.out <test.txt
