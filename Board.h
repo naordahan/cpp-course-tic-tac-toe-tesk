@@ -8,6 +8,7 @@
 #include <exception>
 #include <string>
 #include "stdio.h"
+#include <fstream>
 using namespace std;
 // huge tnx for omeressa and xgreenbeen, for help
 //https://github.com/omeressa/Cpp-Ex7/blob/master/Board.h
@@ -19,7 +20,7 @@ public:
     //ctor
     Board(const uint size);
     Board(const Board& b2);
-    Board(){}  //empty ctor
+    Board(); //empty ctor
     //dtor
     ~Board();
     // operators
@@ -29,9 +30,20 @@ public:
     friend  ostream&operator <<(ostream& os ,const Board& theboard);
     //
     uint size()const{ return bsize;}
+    //input
+    friend  istream&operator >>(istream& in , Board& theboard);
+    //drew
+    string draw(int picpx);
+
 
 };
-
+// struck for coloer
+struct RGB{
+    uint8_t red,green,blue;
+public:
+    RGB(){};
+    RGB(uint8_t red,uint8_t green,uint8_t blue):red(red),green(green),blue(blue){}
+};
 
 #endif //TIC_TAC_TOE_BOARD_HPP
 
