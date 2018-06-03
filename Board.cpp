@@ -185,7 +185,7 @@ string Board::draw(int nPx){
     ifstream file(fileName);
     bool myfileExist=false;
     if(file){
-        cout<< "i's exist!!!"<<'\n';
+        //cout<< "i's exist!!!"<<'\n';
         myfileExist=true;
     }
     int i=1;
