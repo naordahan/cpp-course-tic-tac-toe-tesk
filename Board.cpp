@@ -109,11 +109,11 @@ istream& operator >>(istream& cin , Board& theboard){
     for (int i = 0; i <theboard.size() ; ++i) {
         for (int j = 0; j <theboard.size() ; ++j) {
             //cout << "inside";
-            cout << line[j] <<"  ";
+           // cout << line[j] <<"  ";
             theboard.boardmatrix[i][j]=line[j];    //TODO:we have IllegalCharException all the time in clion!! why?
             
         }
-        cout << '\n';
+       // cout << '\n';
         cin >> line;
     }
     return cin;
@@ -180,7 +180,7 @@ void Dex(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy){
 string Board::draw(int nPx){
     const int dimx=nPx;
     const int dimy=nPx;
-    cout <<"dimx="<<dimx<<'\n';
+    //cout <<"dimx="<<dimx<<'\n';
     string fileName="myboard.ppm";
     ifstream file(fileName);
     bool myfileExist=false;
@@ -201,7 +201,7 @@ string Board::draw(int nPx){
     //create new file
     ofstream imgFile(fileName);
     //cout<< "letsgo";
-    cout<<"my Board:"<<fileName<<'\n';
+    //cout<<"my Board:"<<fileName<<'\n';
     imgFile<<"P6"<<'\n'<< dimx << " " << dimy << endl << 255 <<endl;
     // start building the pic:   
     // create mat for pixel:   
